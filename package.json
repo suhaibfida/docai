@@ -15,8 +15,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.18.3",
   "dependencies": {
-    "node": "^25.8.1",
-    "pdf-parse": "^2.4.5",
+    "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "@types/pdf-parse": "^1.1.5",
     "typescript": "^5.9.3"
   }
 }

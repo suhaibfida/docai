@@ -8,12 +8,13 @@ importers:
 
   .:
     dependencies:
-      node:
-        specifier: ^25.8.1
-        version: 25.8.1
       pdf-parse:
         specifier: ^2.4.5
         version: 2.4.5
+    devDependencies:
+      '@types/pdf-parse':
+        specifier: ^1.1.5
+        version: 1.1.5
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -84,13 +85,11 @@ packages:
     resolution: {integrity: sha512-DxuT1ClnIPts1kQx8FBmkk4BQDTfI5kIzywAaMjQSXfNnra5UFU9PwurXrl+Je3bJ6BGsp/zmshVVFbCmyI+ww==}
     engines: {node: '>= 10'}
 
-  node-bin-setup@1.1.4:
-    resolution: {integrity: sha512-vWNHOne0ZUavArqPP5LJta50+S8R261Fr5SvGul37HbEDcowvLjwdvd0ZeSr0r2lTSrPxl6okq9QUw8BFGiAxA==}
+  '@types/node@25.5.0':
+    resolution: {integrity: sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw==}
 
-  node@25.8.1:
-    resolution: {integrity: sha512-AG1iDDN7Uzku6rFQTjfrqZZRjur8YPkO73PnfDfoj5348DQmFACA8D4X8EhvO8ObIntENK5e/aVviy+sFsAbOA==}
-    engines: {npm: '>=5.0.0'}
-    hasBin: true
+  '@types/pdf-parse@1.1.5':
+    resolution: {integrity: sha512-kBfrSXsloMnUJOKi25s3+hRmkycHfLK6A09eRGqF/N8BkQoPUmaCr+q8Cli5FnfohEz/rsv82zAiPz/LXtOGhA==}
 
   pdf-parse@2.4.5:
     resolution: {integrity: sha512-mHU89HGh7v+4u2ubfnevJ03lmPgQ5WU4CxAVmTSh/sxVTEDYd1er/dKS/A6vg77NX47KTEoihq8jZBLr8Cxuwg==}
@@ -105,6 +104,9 @@ packages:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@7.18.2:
+    resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
 snapshots:
 
@@ -151,11 +153,13 @@ snapshots:
       '@napi-rs/canvas-linux-x64-musl': 0.1.80
       '@napi-rs/canvas-win32-x64-msvc': 0.1.80
 
-  node-bin-setup@1.1.4: {}
-
-  node@25.8.1:
+  '@types/node@25.5.0':
     dependencies:
-      node-bin-setup: 1.1.4
+      undici-types: 7.18.2
+
+  '@types/pdf-parse@1.1.5':
+    dependencies:
+      '@types/node': 25.5.0
 
   pdf-parse@2.4.5:
     dependencies:
@@ -167,3 +171,5 @@ snapshots:
       '@napi-rs/canvas': 0.1.80
 
   typescript@5.9.3: {}
+
+  undici-types@7.18.2: {}
