@@ -1,19 +1,16 @@
-interface chunk {
+interface Chunk {
   text: string;
 }
-export const chunker = (data: chunk, chunkSize = 500, overlap = 100) => {
-  const text = data.text;
 
-  const chunks: string[] = [];
-
-  const split = text.split(/\s+/);
-  console.log(split);
+export const chunker = (data: Chunk, chunkSize = 200, overlap = 20) => {
+  const dataa = data.text;
+  const split = dataa.split(/\s+/);
+  let array: string[] = [];
   let start = 0;
   while (start < split.length) {
-    const process = split.slice(start, start + chunkSize).join(" ");
-    console.log(process);
-    chunks.push(process);
+    let process = split.slice(start, start + chunkSize).join(" ");
+    array.push(process);
     start += chunkSize - overlap;
   }
-  return chunks;
+  console.log(array);
 };
